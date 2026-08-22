@@ -17,7 +17,22 @@ import reportRoutes from './routes/reportRoutes.js';
 
 const app = express();
 
-app.use(cors());
+const allowedOrigins = [
+  'https://frontend-mocha-sigma-35.vercel.app',
+  'http://localhost:5173',
+];
+
+app.use(
+  cors({
+    origin(origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+      return callback(new Error('Not allowed by CORS'));
+    },
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 app.get('/api/health', (req, res) => res.json({ status: 'ok' }));
