@@ -1,5 +1,1 @@
 .vercel
-.env
-node_modules
-/.dev.vars
-/docs
