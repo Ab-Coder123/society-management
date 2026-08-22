@@ -1,0 +1,37 @@
+# ─── Root-level .gitignore ────────────────────────────────────────────────────
+# Covers both backend/ and frontend/ subdirectories from the repo root
+
+# ── Environment files (CRITICAL — never commit real secrets) ──────────────────
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+atlas-credentials.env
+
+# ── Dependencies ──────────────────────────────────────────────────────────────
+node_modules/
+**/node_modules/
+
+# ── Build artifacts ───────────────────────────────────────────────────────────
+dist/
+build/
+**/dist/
+**/build/
+
+# ── OS / editor clutter ───────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+*.log
+
+# ── Coverage and test output ──────────────────────────────────────────────────
+coverage/
+.nyc_output/
+
+# ── Misc ──────────────────────────────────────────────────────────────────────
+*.zip
+*.tar.gz
